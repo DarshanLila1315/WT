@@ -1,0 +1,43 @@
+<!-- 3. Create a webpage that shows the use of:
+a. Child Selector (ul > li)
+b. Adjacent Sibling Selector (h2 + p)
+c. Attribute Selector (input[type="text"]) to target specific elements and apply
+CSS rules -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Child Selector */
+        ul > li {
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* Adjacent Sibling Selector */
+        h2 + p {
+            color: green;
+            font-style: italic;
+        }
+
+        /* Attribute Selector */
+        input[type="text"] {
+            border: 2px solid red;
+            padding: 5px;
+        }
+</style>
+</head>
+<body>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <h2>Heading 1</h2>
+    <p>This is a paragraph that is an adjacent sibling to the heading above.</p>
+    <input type="text" placeholder="Enter text here">
+    
+</body>
+</html>
