@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    display: flex;
+    width: 100vw;
+    height: 30px;
+}
+
+.logo{
+    border: 2px solid orange;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.list{
+    border: 2px solid rgb(38, 0, 255);
+    width: 80%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20px;
+}
+.list ul{
+    display: flex;
+    gap: 20px;   
+    list-style: none;
+}
+
+.list a{
+  text-decoration: none;
+  color: black;
+} 
+
+.main{
+    display: flex;
+
+}
+
+.left{
+    border: 2px solid rgb(247, 6, 215);
+    width: 25%;
+   padding: 5px;
+}
+
+.fetures{
+    width: 100%;
+    display: flex;
+     justify-content: center;
+}
+
+.left ul{
+   list-style: none;
+}
+
+.left li{
+    border: 2px solid;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 25px;
+    width: 250px;
+    margin-bottom: 2px ;
+}
+
+.fetures li :nth-child(1){
+    margin-top  : 2px ;
+}
+
+.right{
+    border: 2px solid rgb(12, 219, 43);
+    width: 75%;
+}
+
+.box{
+    padding: 5px;
+}
+
+.uper{
+    border: 2px solid black;
+    height: 70px;
+    margin-bottom: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.doted-box{
+    border: 2px dotted red;
+    height: 50px;
+    width: 200px;
+    margin: 5px;
+}
+
+.lower{
+    border: 2px solid black;
+    height: 70px;
+    margin-bottom: 4px;
+    display: flex;
+}
+
+.footer{
+    width: 100vw;
+    border: 2px solid rgb(171, 77, 226);
+    text-align: center;
+}
