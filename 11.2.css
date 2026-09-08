@@ -1,0 +1,17 @@
+ /* Design a webpage that highlights  the first line  of  a paragraph, enlarges the first letter, 
+and changes background color when text is selected using pseudo-elements. */
+ 
+ h1::first-line {
+     font-size: 100px;
+     color: #e10c17;
+ }
+ 
+ p::first-letter {
+     font-size: 50px;
+     color: #4c0ce1;
+ }
+ 
+ p::selection {
+     background-color: #b3e10c;
+     color: #030000;
+ }
