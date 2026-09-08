@@ -1,0 +1,58 @@
+/* Design a webpage where font size and image dimensions adjust based on screen width 
+using media queries to improve readability on all devices.  */
+
+* {
+    height: 100%;
+    color: #0025e1;
+}
+
+div {
+    height: 400px;
+    width: 400px;
+}
+
+@media screen and (max-width: 600px) {
+    .div {
+        height: 200px;
+        width: 200px;
+    }
+    body {
+        background-color: #e30035;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .div {
+        height: 150px;
+        width: 150px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    img {
+        width: 700px;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .div {
+        height: 100px;
+        width: 100px;
+        font-size: 16px;
+    }
+    img {
+        width: 1025px;
+        height: auto;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}

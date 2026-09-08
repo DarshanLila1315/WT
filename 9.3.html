@@ -1,0 +1,148 @@
+<!-- Create custom animation of your choice -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        .red {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: red;
+            position: absolute;
+            animation: moveRed 5s linear infinite;
+        }
+        
+        .green {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: green;
+            position: absolute;
+            animation: moveGreen 5s linear infinite;
+        }
+        
+        .blue {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: blue;
+            position: absolute;
+            animation: moveBlue 5s linear infinite;
+        }
+        
+        .yellow {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: yellow;
+            position: absolute;
+            animation: moveYellow 5s linear infinite;
+        }
+        
+        @keyframes moveRed {
+            0% {
+                top: 0;
+                left: 0;
+            }
+            25% {
+                top: 0;
+                left: 95%;
+            }
+            50% {
+                top: 50%;
+                left: 50%;
+            }
+            75% {
+                top: 95%;
+                left: 0;
+            }
+            100% {
+                top: 0;
+                left: 0;
+            }
+        }
+        
+        @keyframes moveGreen {
+            0% {
+                top: 0;
+                left: 95%;
+            }
+            25% {
+                top: 0%;
+                left: 0%;
+            }
+            50% {
+                top: 50%;
+                left: 50%;
+            }
+            75% {
+                top: 95%;
+                left: 95%;
+            }
+            100% {
+                top: 0;
+                left: 95%;
+            }
+        }
+        
+        @keyframes moveBlue {
+            0% {
+                top: 95%;
+                left: 95%;
+            }
+            25% {
+                top: 95%;
+                left: 0;
+            }
+            50% {
+                top: 50%;
+                left: 50%;
+            }
+            75% {
+                top: 0;
+                left: 95%;
+            }
+            100% {
+                top: 95%;
+                left: 95%;
+            }
+        }
+        
+        @keyframes moveYellow {
+            0% {
+                top: 95%;
+                left: 95%;
+            }
+            25% {
+                top: 95%;
+                left: 0;
+            }
+            50% {
+                top: 50%;
+                left: 50%;
+            }
+            75% {
+                top: 0%;
+                left: 95%;
+            }
+            100% {
+                top: 95%;
+                left: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="red"></div>
+    <div class="blue"></div>
+    <div class="green"></div>
+    <div class="yellow"></div>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+/* obile:  max-width  600px,  tablet:  601px–1024px, 
+desktop: 1025px and above */
+
+* {
+    background-color: #353932;
+    height: 100%;
+}
+
+div {
+    height: 400px;
+    width: 400px;
+    background-color: #90ea30;
+}
+
+@media screen and (max-width: 600px) {
+    .div {
+        height: 200px;
+        width: 200px;
+        background-color: #0035e3;
+    }
+    body {
+        background-color: #e30035;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .div {
+        height: 150px;
+        width: 150px;
+        background-color: #e30035;
+    }
+    body {
+        background-color: #35e300;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .div {
+        height: 100px;
+        width: 100px;
+        background-color: #35e300;
+    }
+    body {
+        background-color: #0035e3;
+    }
+}
