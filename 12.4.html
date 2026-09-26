@@ -1,0 +1,34 @@
+<!-- AP in JavaScript to print the Fibonacci series of a number. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="fibonacci"></h1>
+    <script>
+        var num = parseInt(prompt("Enter a number:"));
+        var fib;
+        var a = fib = 0,
+            b = 1;
+
+        for (var i = 0; i < num; i++) {
+            if (i <= 1) {
+                fib = i;
+            } else {
+                fib = a + b;
+                a = b;
+                b = fib;
+            }
+        }
+
+        document.getElementById("fibonacci").innerHTML = "Fibonacci series up to " + num + " terms: " + fib;
+    </script>
+</body>
+
+</html>

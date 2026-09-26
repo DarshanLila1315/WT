@@ -1,0 +1,30 @@
+<!-- WAP in JavaScript to print the factors of given number -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function printFactors(num) {
+            let factors = [];
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    factors.push(i);
+                }
+            }
+            return factors;
+        }
+
+        let number = prompt("Enter a number to find its factors:");
+        let factors = printFactors(parseInt(number));
+        document.write("Factors of " + number + " are: " + factors.join(", "));
+    </script>
+</body>
+
+</html>

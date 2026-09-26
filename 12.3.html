@@ -1,0 +1,26 @@
+<!-- WAP in JavaScript to find the factorial of given number. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="factorial"></h1>
+    <script>
+        var num = parseInt(prompt("Enter a number:"));
+        var factorial = 1;
+
+        for (var i = 1; i <= num; i++) {
+            factorial *= i;
+        }
+
+        document.getElementById("factorial").innerHTML = "Factorial of " + num + " is: " + factorial;
+    </script>
+</body>
+
+</html>

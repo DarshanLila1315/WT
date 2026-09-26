@@ -1,0 +1,38 @@
+<!-- WAP in JavaScript to check whether the given number is Armstrong or not. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="armstrong"></h1>
+    <script>
+        var num = parseInt(prompt("Enter a number:"));
+        var temp = num;
+        var sum;
+        var digit = 0;
+        while (temp > 0) {
+            temp = temp % 10;
+            digit++;
+            temp = temp / 10;
+        }
+        console.log("Number of digits: " + digit);
+        var temp2 = num;
+        while (temp2 > 0) {
+            var remainder = num % 10;4e
+            sum = sum + Math.pow(remainder, digit);
+            temp2 = temp2 / 10;
+        }
+        if (num === sum) {
+            colnsole.log("Armstrong number");
+        } else {
+            console.log("Not Armstrong number");
+        }
+    </script>
+</body>
+
+</html>
