@@ -1,0 +1,53 @@
+<!-- WAP to display given patterns using JavaScript.
+
+Pattern 1:
+*
+* *
+* * *
+* * * * 
+* * * * *
+
+pattern 2:
+
+         *          
+       * * *         
+     * * * * *       
+   * * * * * * *     
+ * * * * * * * * *  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let pattern1 = "";
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                pattern1 += "* ";
+            }
+            pattern1 += "<br>";
+        }
+        document.write("Pattern 1:<br>" + pattern1 + "<br>");
+
+        let pattern2 = "";
+        let rows = 5;
+        for (let i = 1; i <= rows; i++) {
+            for (let j = rows - i; j > 0; j--) {
+                pattern2 += "&nbsp;&nbsp;";
+            }
+            for (let k = 1; k <= (2 * i - 1); k++) {
+                pattern2 += "* ";
+            }
+            pattern2 += "<br>";
+        }
+        document.write("Pattern 2:<br>" + pattern2);
+    </script>
+</body>
+
+</html>
