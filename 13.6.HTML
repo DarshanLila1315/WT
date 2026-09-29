@@ -1,0 +1,47 @@
+<!-- Write an HTML page with JavaScript that takes a number from popup box in the range 
+0-999 and display it in words. If the number is out of range, it should show “out of 
+range” and if it is not a number ,it should show “not a number” message in the result 
+box.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const input = prompt("Enter a number between 0 and 999:");
+        let result;
+
+        if (input === null || input.trim() === "" || !/^[+-]?\d+$/.test(input.trim())) {
+            result = "Not a number";
+        } else {
+            const number = Number(input.trim());
+            const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"];
+            const teens = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"];
+            const tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+            if (number < 0 || number > 999) {
+                result = "Out of range";
+            } else if (number === 0) {
+                result = "Zero";
+            } else {
+                function toWords(value) {
+                    if (value < 10) return ones[value];
+                    if (value < 20) return teens[value - 10];
+                    if (value < 100) return tens[Math.floor(value / 10)] + (value % 10 ? " " + ones[value % 10] : "");
+                    return ones[Math.floor(value / 100)] + " Hundred" + (value % 100 ? " " + toWords(value % 100) : "");
+                }
+                result = toWords(number);
+            }
+        }
+        document.write(result);
+    </script>
+
+</body>
+
+</html>
