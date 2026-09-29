@@ -1,0 +1,24 @@
+<!-- WAP to read an array from the user and sort them in ascending order -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let n = prompt("Enter the number of elements in the array:");
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            arr[i] = parseInt(prompt('Enter element :'));
+        }
+        arr.sort();
+        document.write("The sorted array in ascending order is: " + arr);
+    </script>
+</body>
+
+</html>
