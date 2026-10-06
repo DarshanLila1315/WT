@@ -1,0 +1,27 @@
+<!-- WAP to display products stored in array. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let products = {
+            "Laptop": 800,
+            "Smartphone": 600,
+            "Tablet": 400,
+            "Headphones": 100,
+            "Smartwatch": 200
+        }
+        document.write("List of Products:<br>");
+        for (let product in products) {
+            document.write(product + " - Price: $" + products[product] + "<br>");
+        }
+    </script>
+</body>
+
+</html>
