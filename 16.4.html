@@ -1,8 +1,53 @@
-<!-- Write a JavaScript program to validate user data given from the HTML form(C) 
-1) username must be of minimum 8 characters 
-2)  password  must  contain  at  least  1  digit  and  1  special  character  and  should  be 
-between 8-12 characters 
-3) password and repeat password must be same 
-4) age must be greater than 18 (calculate from date of birth) 
-5) enrollment must be of 11 digits 
-6) email validation  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Validation</title>
+</head>
+
+<body>
+    <form id="userForm" novalidate>
+        <label>Username: <input type="text" id="username" required></label><br>
+        <label>Password: <input type="password" id="password" required></label><br>
+        <label>Repeat Password: <input type="password" id="repeatPassword" required></label><br>
+        <label>Date of Birth: <input type="date" id="dob" required></label><br>
+        <label>Enrollment: <input type="text" id="enrollment" required></label><br>
+        <label>Email: <input type="email" id="email" required></label><br>
+        <button type="submit">Submit</button>
+        <p id="message" role="alert"></p>
+    </form>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            const repeatPassword = document.getElementById('repeatPassword').value;
+            const dob = new Date(document.getElementById('dob').value);
+            const enrollment = document.getElementById('enrollment').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message');
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const birthdayPassed = today.getMonth() > dob.getMonth() ||
+                (today.getMonth() === dob.getMonth() && today.getDate() >= dob.getDate());
+            if (!birthdayPassed) age--;
+
+            const valid = username.length >= 8 &&
+                password.length >= 8 && password.length <= 12 &&
+                /\d/.test(password) && /[^A-Za-z0-9]/.test(password) &&
+                password === repeatPassword && !isNaN(dob.getTime()) && age > 18 &&
+                /^\d{11}$/.test(enrollment) &&
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            message.textContent = valid ?
+                'Form submitted successfully.' :
+                'Please enter valid data in all fields.';
+            message.style.color = valid ? 'green' : 'red';
+        });
+    </script>
+</body>
+
+</html>
