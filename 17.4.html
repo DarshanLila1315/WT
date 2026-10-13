@@ -1,0 +1,43 @@
+<!-- WAP to recognize which form event is fired. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Events</title>
+</head>
+
+<body>
+
+    <h2>Recognize Form Events</h2>
+
+    <form onsubmit="showEvent('submit'); return false;" onreset="showEvent('reset')" onchange="showEvent('change')">
+
+        Name:
+        <input type="text" onfocus="showEvent('focus')" onblur="showEvent('blur')">
+        <br><br> Course:
+        <select onchange="showEvent('change')">
+            <option>BCA</option>
+            <option>B.Tech</option>
+            <option>MCA</option>
+        </select>
+        <br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <h3 id="result">Form event will appear here</h3>
+
+    <script>
+        function showEvent(eventName) {
+            document.getElementById("result").innerHTML =
+                "Form Event Fired: " + eventName;
+        }
+    </script>
+
+</body>
+
+</html>

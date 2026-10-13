@@ -1,0 +1,33 @@
+<!-- WAP to demonstrate change in properties of HTML element using JavaScript -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Change HTML Properties</title>
+</head>
+
+<body>
+
+    <h2 id="heading">Hello JavaScript!</h2>
+
+    <p id="para">This is a paragraph.</p>
+
+    <button onclick="changeProperties()">Change Properties</button>
+
+    <script>
+        function changeProperties() {
+            document.getElementById("heading").innerHTML =
+                "Welcome to JavaScript!";
+
+            document.getElementById("heading").style.color = "red";
+
+            document.getElementById("para").style.backgroundColor = "yellow";
+
+            document.getElementById("para").style.fontSize = "25px";
+        }
+    </script>
+
+</body>
+
+</html>

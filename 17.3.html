@@ -1,0 +1,28 @@
+<!-- WAP to recognize which keyboard event is fired -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Keyboard Events</title>
+</head>
+
+<body>
+
+    <h2>Recognize Keyboard Events</h2>
+
+    <input type="text" placeholder="Press any key here" onkeydown="showEvent('keydown')" onkeyup="showEvent('keyup')" onkeypress="showEvent('keypress')">
+
+    <h3 id="result">Keyboard event will appear here</h3>
+
+    <script>
+        function showEvent(eventName) {
+            document.getElementById("result").innerHTML =
+                "Keyboard Event Fired: " + eventName;
+        }
+    </script>
+
+</body>
+
+</html>

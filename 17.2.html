@@ -1,0 +1,26 @@
+<!-- WAP to recognize which mouse event is fired -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Mouse Event Recognition</h1>
+    <p onmouseover="showEvent('Mouse Over')" onmouseout="showEvent('Mouse Out')" onclick="showEvent('Mouse Click')" ondblclick="showEvent('Mouse Double Click')" oncontextmenu="showEvent('Mouse Right Click')">
+        Click, double-click, or right-click anywhere on this page to see which mouse event is fired.
+    </p>
+
+    <script>
+        function showEvent(eventType) {
+            alert('Mouse ' + eventType + ' Event Fired!');
+        }
+    </script>
+
+</body>
+
+</html>

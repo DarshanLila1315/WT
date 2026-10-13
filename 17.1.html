@@ -1,0 +1,25 @@
+<!-- WAP to change background color on click of button -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Change Background Color</h1>
+    <button onclick="changeBackgroundColor()">Click Me</button>
+
+    <script>
+        function changeBackgroundColor() {
+            const colors = ['#FF5733', '#33FF57', '#3357FF', '#F333FF', '#33FFF5'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+
+</html>
