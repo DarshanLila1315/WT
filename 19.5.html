@@ -1,0 +1,39 @@
+<!-- Define a jQuery plugin called "wordCount" that counts the number of words in a textarea  element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <textarea id="myTextarea" rows="4" cols="50"></textarea>
+    <p id="wordCount">Word Count: 0</p>
+
+    <script>
+        (function($) {
+            $.fn.wordCount = function() {
+                return this.each(function() {
+                    var text = $(this).val();
+                    var count = text.trim().split(/\s+/).filter(function(word) {
+                        return word.length > 0;
+                    }).length;
+                    $('#wordCount').text('Word Count: ' + count);
+                });
+            };
+        })(jQuery);
+
+        $(document).ready(function() {
+            $('#myTextarea').on('input', function() {
+                $(this).wordCount();
+            });
+        });
+    </script>
+</body>
+
+</html>
