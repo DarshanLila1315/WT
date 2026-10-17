@@ -1,0 +1,31 @@
+<!-- Demonstrate how to create a class in Java Script -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Class</h2>
+    <p id="result"></p>
+
+    <script>
+        class Student {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            display() {
+                return "Name: " + this.name +
+                    "<br>Age: " + this.age;
+            }
+        }
+
+        let s1 = new Student("Darshan", 20);
+
+        document.getElementById("result").innerHTML =
+            s1.display();
+    </script>
+</body>
+
+</html>

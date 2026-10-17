@@ -1,0 +1,22 @@
+<!-- Demonstrate the Arrow functions -->
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Arrow Functions</h2>
+    <p id="result"></p>
+
+    <script>
+        const add = (a, b) => a + b;
+        const square = n => n * n;
+        const greet = () => "Hello, JavaScript!";
+
+        document.getElementById("result").innerHTML =
+            "Addition: " + add(10, 20) +
+            "<br>Square: " + square(5) +
+            "<br>" + greet();
+    </script>
+</body>
+
+</html>

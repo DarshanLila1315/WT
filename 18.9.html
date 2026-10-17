@@ -1,0 +1,160 @@
+<!-- Create a Snake game using Java script. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snake Game</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+        
+        canvas {
+            background: black;
+            border: 3px solid green;
+        }
+        
+        button {
+            padding: 8px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Snake Game</h2>
+    <h3 id="score">Score: 0</h3>
+    <canvas id="game" width="400" height="400"></canvas>
+    <br>
+    <button onclick="restart()">Restart Game</button>
+    <p>Use arrow keys to move the snake.</p>
+
+    <script>
+        const canvas = document.getElementById("game");
+        const ctx = canvas.getContext("2d");
+
+        const size = 20;
+        let snake, food, dx, dy, score, timer, gameOver;
+
+        function restart() {
+            clearInterval(timer);
+
+            snake = [{
+                x: 200,
+                y: 200
+            }];
+            food = {
+                x: 100,
+                y: 100
+            };
+            dx = size;
+            dy = 0;
+            score = 0;
+            gameOver = false;
+
+            document.getElementById("score").innerHTML =
+                "Score: 0";
+
+            draw();
+            timer = setInterval(move, 150);
+        }
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "ArrowUp" && dy === 0) {
+                dx = 0;
+                dy = -size;
+            } else if (e.key === "ArrowDown" && dy === 0) {
+                dx = 0;
+                dy = size;
+            } else if (e.key === "ArrowLeft" && dx === 0) {
+                dx = -size;
+                dy = 0;
+            } else if (e.key === "ArrowRight" && dx === 0) {
+                dx = size;
+                dy = 0;
+            }
+
+            if (e.key.startsWith("Arrow")) {
+                e.preventDefault();
+            }
+        });
+
+        function move() {
+            if (gameOver) return;
+
+            let head = {
+                x: snake[0].x + dx,
+                y: snake[0].y + dy
+            };
+
+            // Check wall collision
+            if (head.x < 0 || head.x >= canvas.width ||
+                head.y < 0 || head.y >= canvas.height) {
+                endGame();
+                return;
+            }
+
+            let eating = head.x === food.x && head.y === food.y;
+
+            // Check collision with the snake
+            let body = eating ? snake : snake.slice(0, -1);
+
+            if (body.some(part =>
+                    part.x === head.x && part.y === head.y)) {
+                endGame();
+                return;
+            }
+
+            snake.unshift(head);
+
+            if (eating) {
+                score++;
+                document.getElementById("score").innerHTML =
+                    "Score: " + score;
+                createFood();
+            } else {
+                snake.pop();
+            }
+
+            draw();
+        }
+
+        function createFood() {
+            do {
+                food = {
+                    x: Math.floor(Math.random() * 20) * size,
+                    y: Math.floor(Math.random() * 20) * size
+                };
+            } while (snake.some(part =>
+                    part.x === food.x && part.y === food.y));
+        }
+
+        function draw() {
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "lime";
+            snake.forEach(part => {
+                ctx.fillRect(part.x, part.y, size - 2, size - 2);
+            });
+
+            ctx.fillStyle = "red";
+            ctx.fillRect(food.x, food.y, size - 2, size - 2);
+        }
+
+        function endGame() {
+            gameOver = true;
+            clearInterval(timer);
+            ctx.fillStyle = "white";
+            ctx.font = "30px Arial";
+            ctx.fillText("Game Over!", 115, 190);
+        }
+
+        restart();
+    </script>
+</body>
+
+</html>

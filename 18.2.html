@@ -1,0 +1,31 @@
+<!-- Demonstrate the difference between let and var. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Difference Between let and var</h2>
+    <p id="result"></p>
+
+    <script>
+        var a = 10;
+        var a = 20;
+
+        let b = 30;
+        b = 40;
+
+        document.getElementById("result").innerHTML =
+            "var a = " + a + "<br>let b = " + b;
+
+        if (true) {
+            var x = 100;
+            let y = 200;
+        }
+
+        document.getElementById("result").innerHTML +=
+            "<br>var x = " + x;
+    </script>
+</body>
+
+</html>

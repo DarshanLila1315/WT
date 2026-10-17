@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse and Keyboard Events</title>
+    <style>
+        #mouseArea {
+            width: 320px;
+            height: 160px;
+            padding: 20px;
+            background: #dceeff;
+            border: 2px solid #357;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Mouse and Keyboard Events</h2>
+    <div id="mouseArea" tabindex="0">Move, click, double-click, or right-click here.</div>
+    <p id="status">Event: none</p>
+    <label>Press a key: <input id="keyInput" type="text"></label>
+
+    <script>
+        const area = document.getElementById('mouseArea');
+        const status = document.getElementById('status');
+        const keyInput = document.getElementById('keyInput');
+
+        function show(eventName, event) {
+            status.textContent = `Event: ${eventName}` +
+                (event ? ` | Mouse position: (${event.clientX}, ${event.clientY})` : '');
+        }
+
+        ['click', 'dblclick', 'mousedown', 'mouseup', 'mousemove', 'mouseover', 'mouseout', 'contextmenu']
+        .forEach(eventName => area.addEventListener(eventName, event => {
+            if (eventName === 'contextmenu') event.preventDefault();
+            show(eventName, event);
+        }));
+
+        keyInput.addEventListener('keydown', event => {
+            status.textContent = `Key: ${event.key} | Key code: ${event.keyCode}`;
+        });
+    </script>
+</body>
+
+</html>

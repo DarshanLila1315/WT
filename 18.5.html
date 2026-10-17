@@ -1,0 +1,23 @@
+<!-- Demonstrate the ‘for of’ loop. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>For Of Loop</h2>
+    <p id="result"></p>
+
+    <script>
+        let numbers = [10, 20, 30, 40, 50];
+        let output = "";
+
+        for (let number of numbers) {
+            output += number + "<br>";
+        }
+
+        document.getElementById("result").innerHTML = output;
+    </script>
+</body>
+
+</html>

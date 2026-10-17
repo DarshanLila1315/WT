@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vowel Key Handler</title>
+</head>
+
+<body>
+    <p id="message">Press a vowel key.</p>
+
+    <script>
+        const message = document.getElementById("message");
+        const vowels = new Set(["a", "e", "i", "o", "u"]);
+
+        document.addEventListener("keydown", (event) => {
+            const key = event.key.toLowerCase();
+            if (vowels.has(key)) {
+                message.textContent = `${key} is pressed.`;
+            }
+        });
+
+        document.addEventListener("keyup", () => {
+            document.body.style.backgroundColor = "blue";
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!-- Demonstrate the spread operator. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Spread Operator</h2>
+    <p id="result"></p>
+
+    <script>
+        let a = [10, 20, 30];
+        let b = [40, 50];
+
+        let c = [...a, ...b];
+
+        document.getElementById("result").innerHTML =
+            "Array 1: " + a +
+            "<br>Array 2: " + b +
+            "<br>Combined Array: " + c;
+
+        let student = {
+            name: "Rahul",
+            age: 20
+        };
+        let updatedStudent = {...student,
+            city: "Rajkot"
+        };
+
+        document.getElementById("result").innerHTML +=
+            "<br>Student: " + updatedStudent.name +
+            "<br>Age: " + updatedStudent.age +
+            "<br>City: " + updatedStudent.city;
+    </script>
+</body>
+
+</html>
